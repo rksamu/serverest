@@ -153,12 +153,12 @@ Using both account types through bearer token,  this test aims to test product e
 | 1 | Send POST request to `/produtos` endpoint with first product data from fixture using admin token | Response status 201 with success message and product ID |
 | 2 | Verify product appears in GET `/produtos` response | Product data is present in the products list with correct information |
 | 3 | Send GET request to `/produtos/_id` for the created product | Response status 200 with complete product details |
-| 4 | Attempt to create product with regular user token via POST `/produtos` | Response status 403 with message *""Rota exclusiva para administradores""* |
+| 4 | Delete the product via DELETE `/produtos/_id` | Response 200 with message *"Registro excluído com sucesso"* |
 | 5 | Repeat steps 1-4 for all products in the fixture file | All products are created and processed successfully |
 | 6 | Admin user updates product via PUT `/produtos/_id` with modified data | Admin user updates product via PUT `/produtos/_id` with modified data |
-| 7 | Admin user updates product via PUT `/produtos/_id` with modified data | Admin user updates product via PUT `/produtos/_id` with modified data |
-| 8 | Admin user deletes product via DELETE `/produtos/_id` | Response status 200 with success message of product deleted |
-| 9 | Verify product deletion via GET `/produtos/_id` | Response status 400 with product not found message |
+| 7 | Admin user deletes product via DELETE `/produtos/_id` | Response status 200 with success message of product deleted |
+| 8 | Verify product deletion via GET `/produtos/_id` | Response status 400 with product not found message |
+| 9 | Attempt to create product with regular user token via POST `/produtos` | Response status 403 with message *""Rota exclusiva para administradores""* |
 
 
 ## [API-3] Using Shoppping Cart
